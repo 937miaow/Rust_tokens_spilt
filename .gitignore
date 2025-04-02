@@ -1,17 +1,11 @@
 # VSCode
-.vscode/
+.vscode
 
 # 测试文件
-src/test.*
-
-# 编译文件
-*.exe
-*.out
-*.o
-*.obj
+test
 
 # 构建文件
-build/
+build
 
 # 虚拟环境
-venv/
+venv
