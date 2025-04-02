@@ -12,3 +12,6 @@ src/test.*
 
 # 构建文件
 build/
+
+# 虚拟环境
+venv/
