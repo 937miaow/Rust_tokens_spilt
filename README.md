@@ -21,6 +21,7 @@ Rust_tokens_spilt/
 │   ├── simple.rs      # 简单Rust代码示例
 │   ├── struct.rs      # 结构体示例
 │   └── trait.rs       # trait示例
+├── install.bat        # 一键安装脚本
 └── CMakeLists.txt     # 根目录构建配置
 ```
 
@@ -32,6 +33,38 @@ Rust_tokens_spilt/
 - Python 3.6 或更高版本
 - Visual Studio 2019 或更高版本（Windows）
 - PyQt5 5.15.9
+
+### 环境安装
+
+有两种方式安装环境：
+
+1. 使用一键安装脚本（推荐）：
+```bash
+./install.bat
+```
+
+2. 手动安装：
+   - 安装 Python：
+     - 访问 [Python官网](https://www.python.org/downloads/) 下载并安装 Python 3.6 或更高版本
+     - 安装时勾选 "Add Python to PATH" 选项
+
+   - 安装 CMake：
+     - 访问 [CMake官网](https://cmake.org/download/) 下载并安装 CMake
+     - 安装时选择 "Add CMake to the system PATH for all users"
+
+   - 安装 Visual Studio：
+     - 访问 [Visual Studio官网](https://visualstudio.microsoft.com/) 下载并安装 Visual Studio 2019 或更高版本
+     - 安装时选择 "Desktop development with C++" 工作负载
+
+   - 安装 PyQt5：
+     ```bash
+     pip install PyQt5==5.15.9
+     ```
+
+   - 安装其他依赖：
+     ```bash
+     pip install pyinstaller
+     ```
 
 ### 构建过程
 
@@ -76,6 +109,13 @@ cd build/bin
 ```
 
 3. 打包后的程序位于 `dist` 目录下
+
+4. 复制C++后端程序：
+```bash
+copy Rust_tokens_spilt.exe dist\
+```
+
+5. 现在 `dist` 目录下的 `main.exe` 和 `Rust_tokens_spilt.exe` 可以复制到任何机器上运行，无需安装环境。
 
 ## 使用说明
 
