@@ -3,7 +3,8 @@ import os
 from PyQt5.QtWidgets import (QApplication, QMainWindow, QWidget, QVBoxLayout, 
                            QHBoxLayout, QTextEdit, QPushButton, QFileDialog, 
                            QLabel, QMessageBox)
-from PyQt5.QtCore import Qt
+from PyQt5.QtCore import Qt, QUrl
+from PyQt5.QtGui import QDesktopServices
 import subprocess
 
 def get_resource_path(relative_path):
@@ -62,6 +63,21 @@ class MainWindow(QMainWindow):
         self.output_text.setReadOnly(True)
         self.output_text.setMinimumHeight(300)
         layout.addWidget(self.output_text)
+        
+        # 底部信息区域
+        footer_layout = QHBoxLayout()
+        footer_layout.setAlignment(Qt.AlignRight)
+        
+        # 作者信息
+        author_label = QLabel("作者：hhh937meow")
+        footer_layout.addWidget(author_label)
+        
+        # GitHub链接
+        github_btn = QPushButton("GitHub")
+        github_btn.clicked.connect(lambda: QDesktopServices.openUrl(QUrl("https://github.com/937miaow/Rust_tokens_spilt")))
+        footer_layout.addWidget(github_btn)
+        
+        layout.addLayout(footer_layout)
         
     def select_file(self):
         file_name, _ = QFileDialog.getOpenFileName(
